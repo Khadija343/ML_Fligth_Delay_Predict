@@ -1,0 +1,382 @@
+body {
+
+  margin: 0;
+  padding: 0;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  background:
+    linear-gradient(
+      135deg,
+      #020617,
+      #0f172a,
+      #1e293b
+    );
+
+  overflow-x: hidden;
+
+  color: white;
+}
+
+/* ========================================= */
+/* APP CONTAINER */
+/* ========================================= */
+
+.app {
+
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 40px;
+
+  position: relative;
+
+  background-image:
+    url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05");
+
+  background-size: cover;
+
+  background-position: center;
+}
+
+.app::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(2,6,23,0.92),
+      rgba(15,23,42,0.88),
+      rgba(30,41,59,0.88)
+    );
+
+  z-index: 0;
+}
+
+/* ========================================= */
+/* MAIN CARD */
+/* ========================================= */
+
+.card {
+
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 1200px;
+
+  background:
+    rgba(255,255,255,0.08);
+
+  border:
+    1px solid rgba(255,255,255,0.12);
+
+  border-radius: 24px;
+
+  backdrop-filter:
+    blur(18px);
+
+  padding: 40px;
+
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.35);
+
+  transition:
+    all 0.35s ease;
+}
+
+.card:hover {
+
+  transform:
+    translateY(-4px);
+
+  background:
+    rgba(255,255,255,0.12);
+
+  box-shadow:
+    0 12px 35px rgba(0,0,0,0.45);
+}
+
+/* ========================================= */
+/* HEADINGS */
+/* ========================================= */
+
+h1 {
+
+  margin: 0;
+
+  font-size: 38px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+.subtitle {
+
+  color:
+    rgba(255,255,255,0.7);
+
+  margin-bottom: 35px;
+
+  margin-top: 8px;
+
+  font-size: 16px;
+}
+
+.section {
+
+  margin-bottom: 40px;
+}
+
+.section h2 {
+
+  margin-bottom: 22px;
+
+  font-size: 24px;
+
+  font-weight: 600;
+
+  color:
+    #38bdf8;
+}
+
+/* ========================================= */
+/* GRID LAYOUT */
+/* ========================================= */
+
+.grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr));
+
+  gap: 35px;
+}
+
+/* ========================================= */
+/* INPUT GROUP */
+/* ========================================= */
+
+.input-group {
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+label {
+
+  margin-bottom: 10px;
+
+  font-weight: 600;
+
+  color:
+    rgba(255,255,255,0.85);
+}
+
+/* ========================================= */
+/* INPUTS */
+/* ========================================= */
+
+input,
+select {
+
+  padding: 14px;
+
+  border-radius: 14px;
+
+  border:
+    1px solid rgba(255,255,255,0.15);
+
+  background:
+    rgba(255,255,255,0.08);
+
+  color: white;
+
+  font-size: 15px;
+
+  transition:
+    all 0.3s ease;
+}
+
+input::placeholder {
+
+  color:
+    rgba(255,255,255,0.55);
+}
+
+option {
+
+  background:
+    #0f172a;
+}
+
+input:focus,
+select:focus {
+
+  outline: none;
+
+  border:
+    1px solid #38bdf8;
+
+  box-shadow:
+    0 0 12px rgba(56,189,248,0.5);
+}
+
+/* ========================================= */
+/* BUTTON */
+/* ========================================= */
+
+button {
+
+  width: 100%;
+
+  padding: 18px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #0072ff,
+      #00c6ff
+    );
+
+  color: white;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    all 0.3s ease;
+
+  box-shadow:
+    0 8px 20px rgba(0,114,255,0.35);
+}
+
+button:hover {
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 12px 25px rgba(0,114,255,0.5);
+
+  filter:
+    brightness(1.1);
+}
+
+/* ========================================= */
+/* RESULT CARD */
+/* ========================================= */
+
+.result-card {
+
+  margin-top: 35px;
+
+  padding: 28px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(255,255,255,0.08);
+
+  border:
+    1px solid rgba(255,255,255,0.12);
+
+  backdrop-filter:
+    blur(16px);
+
+  transition:
+    all 0.35s ease;
+}
+
+.result-card:hover {
+
+  background:
+    rgba(255,255,255,0.12);
+
+  transform:
+    translateY(-4px);
+}
+
+/* ========================================= */
+/* RESULT STATUS */
+/* ========================================= */
+
+.result-status {
+
+  font-size: 38px;
+
+  font-weight: bold;
+
+  margin-top: 12px;
+
+  color:
+    #00c6ff;
+
+  text-shadow:
+    0 0 15px rgba(0,198,255,0.5);
+}
+
+.probability {
+
+  margin-top: 14px;
+
+  font-size: 18px;
+
+  color:
+    rgba(255,255,255,0.8);
+}
+
+/* ========================================= */
+/* CHART CARD */
+/* ========================================= */
+
+.chart-card {
+
+  margin-bottom: 35px;
+}
+
+/* ========================================= */
+/* RESPONSIVE */
+/* ========================================= */
+
+@media (max-width: 768px) {
+
+  .card {
+
+    padding: 25px;
+  }
+
+  .grid {
+
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+
+    font-size: 30px;
+  }
+}
