@@ -4,7 +4,10 @@ import numpy as np
 import pickle
 # INITIALIZE FLASK
 app = Flask(__name__)
-CORS(app)
+CORS(
+    app,
+    resources={r"/*": {"origins": "*"}}
+)
 # LOAD MODEL & SCALER
 model = pickle.load(open('flight_delay_model.pkl', 'rb'))
 scaler = pickle.load(open('scaler.pkl', 'rb'))
