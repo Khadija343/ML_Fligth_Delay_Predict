@@ -6,7 +6,8 @@ import pickle
 app = Flask(__name__)
 CORS(
     app,
-    resources={r"/*": {"origins": "*"}}
+    resources={r"/*": {"origins": "*"}},
+    supports_credentials=True
 )
 # LOAD MODEL & SCALER
 model = pickle.load(open('flight_delay_model.pkl', 'rb'))
@@ -26,7 +27,7 @@ def home():
     return jsonify({
         "message": "Flight Delay Prediction API Running"})
 # PREDICTION ROUTE
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['POST', 'OPTIONS'])
 def predict():
     try:
         data = request.get_json()
