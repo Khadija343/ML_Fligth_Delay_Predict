@@ -27,6 +27,11 @@ def home():
     return jsonify({
         "message": "Flight Delay Prediction API Running"})
 # PREDICTION ROUTE
+@app.route('/routes')
+def routes():
+    return jsonify(
+        [str(rule) for rule in app.url_map.iter_rules()]
+    )
 @app.route('/predict', methods=['POST', 'OPTIONS'])
 def predict():
     try:
