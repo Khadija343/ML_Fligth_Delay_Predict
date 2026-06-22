@@ -34,6 +34,10 @@ def routes():
     )
 @app.route('/predict', methods=['POST', 'OPTIONS'])
 def predict():
+
+    if request.method == "OPTIONS":
+        return jsonify({"status": "ok"}), 200
+
     try:
         data = request.get_json()
         # CONVERT STRINGS TO NUMBERS USING ENCODERS
